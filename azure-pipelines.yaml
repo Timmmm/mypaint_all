@@ -5,6 +5,10 @@ pool:
   vmImage: 'macOS-10.14'
 
 steps:
+- checkout: self
+  submodules: recursive
+  persistCredentials: true
+
 - script: |
     set -e
     # cd / IS REQUIRED! If you don't do it pip fails, presumably
