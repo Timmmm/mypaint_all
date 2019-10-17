@@ -67,3 +67,13 @@ steps:
     cd mypaint
     pyinstaller mypaint.spec --onefile --windowed
   displayName: 'Making application installer'
+
+- script: |
+    set -e
+    zip -r $(Build.ArtifactStagingDirectory)/MyPaint.zip mypaint/dist/MyPaint.app
+  displayName: 'Zip application'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
