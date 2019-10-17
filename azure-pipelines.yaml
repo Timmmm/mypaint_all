@@ -13,11 +13,11 @@ steps:
     # cd / IS REQUIRED! If you don't do it pip fails, presumably
     # because of something in the mypaint repository confuses it
     # because Python developers don't understand how to write
-    # robust software. Although actually I ended up using brew instead
-    # of pip I've left this just in case.
+    # robust software.
     cd /
     python3 -m pip install --upgrade pip setuptools wheel
     brew install autoconf automake intltool gobject-introspection libffi json-c libtool gettext gtk+3 numpy pygobject3 little-cms2 swig
+    pip3 install pyinstaller
   displayName: 'Install requirements'
 
 - script: |
