@@ -1,9 +1,9 @@
 [submodule "mypaint"]
 	path = mypaint
-	url = git@github.com:Timmmm/mypaint.git
+	url = https://github.com/Timmmm/mypaint.git
 [submodule "libmypaint"]
 	path = libmypaint
-	url = git@github.com:Timmmm/libmypaint.git
+	url = https://github.com/Timmmm/libmypaint.git
 [submodule "mypaint-brushes"]
 	path = mypaint-brushes
-	url = git@github.com:Timmmm/mypaint-brushes.git
+	url = https://github.com/Timmmm/mypaint-brushes.git
