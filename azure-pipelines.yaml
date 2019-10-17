@@ -7,7 +7,6 @@ pool:
 steps:
 - checkout: self
   submodules: recursive
-  persistCredentials: true
 
 - script: |
     set -e
