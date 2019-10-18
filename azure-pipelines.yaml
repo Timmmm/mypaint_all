@@ -66,6 +66,9 @@ steps:
     set -e
     cd mypaint
     pyinstaller mypaint.spec --windowed
+    # Remove these huge X11 cursors that don't seem to be used. I suspect
+    # there is a way to do this from mypaint.spec but I can't work out how.
+    rm -rf dist/MyPaint.app/Contents/MacOS/share/icons/Adwaita/cursors
   displayName: 'Making application installer'
 
 - script: |
