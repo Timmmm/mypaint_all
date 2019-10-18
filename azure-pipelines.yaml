@@ -58,7 +58,7 @@ steps:
     export CFLAGS="-D_DARWIN_C_SOURCE"
     # Required, even though we disabled i18n.
     brew link --force gettext
-    python3 setup.py build_config --brushdir-path='./share/mypaint-data/2.0/brushes' build
+    python3 setup.py build_config --brushdir-path='{installation-prefix}/MacOS/share/mypaint-data/2.0/brushes' build
     brew unlink gettext
   displayName: 'Build mypaint'
 
@@ -69,12 +69,14 @@ steps:
     # Remove these huge X11 cursors that don't seem to be used. I suspect
     # there is a way to do this from mypaint.spec but I can't work out how.
     rm -rf dist/MyPaint.app/Contents/MacOS/share/icons/Adwaita/cursors
+    # Remove non-app bundle files.
+    rm -rf dist/mypaint
   displayName: 'Making application installer'
 
 - script: |
     set -e
-    zip -r $(Build.ArtifactStagingDirectory)/MyPaint.zip mypaint/dist/MyPaint.app
-  displayName: 'Zip application'
+    hdiutil create -volname MyPaint -srcfolder mypaint/dist -ov -format UDZO $(Build.ArtifactStagingDirectory)/MyPaint.dmg
+  displayName: 'Make DMG'
 
 - task: PublishBuildArtifacts@1
   inputs:
