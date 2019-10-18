@@ -16,7 +16,7 @@ steps:
     # robust software.
     cd /
     python3 -m pip install --upgrade pip setuptools wheel
-    brew install autoconf automake intltool gobject-introspection libffi json-c libtool gettext gtk+3 numpy pygobject3 little-cms2 swig
+    brew install autoconf automake intltool gobject-introspection libffi json-c libtool gettext gtk+3 numpy pygobject3 little-cms2 swig adwaita-icon-theme
     pip3 install pyinstaller
   displayName: 'Install requirements'
 
