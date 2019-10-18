@@ -58,7 +58,7 @@ steps:
     export CFLAGS="-D_DARWIN_C_SOURCE"
     # Required, even though we disabled i18n.
     brew link --force gettext
-    python3 setup.py build
+    python3 setup.py build_config --brushdir-path='./share/mypaint-data/2.0/brushes' build
     brew unlink gettext
   displayName: 'Build mypaint'
 
