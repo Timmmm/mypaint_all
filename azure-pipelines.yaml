@@ -65,7 +65,7 @@ steps:
 - script: |
     set -e
     cd mypaint
-    pyinstaller mypaint.spec --onefile --windowed
+    pyinstaller mypaint.spec --windowed
   displayName: 'Making application installer'
 
 - script: |
